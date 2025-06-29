@@ -33,12 +33,19 @@ Jupyter Notebook (for development and testing)
 
 📂 Project Structure
 Social_Media_Sentiment_Analysis/
+<br>
 │
+<br>
 ├── Dataset/              # Contains input datasets
+<br>
 ├── Notebooks/            # Jupyter notebooks with analysis and model training
+<br>
 ├── sentiment_model.pkl   # Saved trained model (if applicable)
+<br>
 ├── README.md             # Project documentation
+<br>
 └── requirements.txt      # List of required libraries
+<br>
 
 
 📊 Workflow

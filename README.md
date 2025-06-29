@@ -1,6 +1,6 @@
 # Social_Media_Sentiment_Analysis
 
-🚀 Features
+##🚀 Features
 Data collection from social media platforms (Twitter dataset or any other source)
 
 Text preprocessing and cleaning
@@ -14,7 +14,7 @@ Real-time sentiment prediction support (if implemented)
 Model performance evaluation
 
 
-🛠️ Technologies Used
+##🛠️ Technologies Used
 Python
 
 Pandas
@@ -31,7 +31,7 @@ Jupyter Notebook (for development and testing)
 
 
 
-📂 Project Structure
+##📂 Project Structure
 Social_Media_Sentiment_Analysis/
 <br>
 │
@@ -48,7 +48,7 @@ Social_Media_Sentiment_Analysis/
 <br>
 
 
-📊 Workflow
+##📊 Workflow
 Data Collection: Gathered social media data.
 
 Data Preprocessing: Cleaning, removing stop words, and tokenization.

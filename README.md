@@ -1,6 +1,47 @@
-# Social Media Sentiment Analysis - Production PySpark Pipeline 🚀
+<div align="center">
 
-This repository contains an industry-standard, production-ready PySpark application for analyzing social media sentiment data. It has been meticulously refactored from an experimental Jupyter Notebook into an elite Data Engineering pipeline utilizing Databricks-style **Delta Lake** storage formats, **Custom PySpark Feature Engineering**, strict **Data Quality Assertions**, and **CI/CD Automation**.
+# 🌊 Social Media Sentiment Analysis — Enterprise PySpark Engine
+
+### *Most tutorials write to CSV. This one builds a Delta Lakehouse.*
+
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![PySpark](https://img.shields.io/badge/PySpark-Data_Engineering-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)](https://spark.apache.org/docs/latest/api/python/)
+[![Delta Lake](https://img.shields.io/badge/Delta_Lake-ACID_Transactions-00A4E4?style=for-the-badge)](https://delta.io/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI/CD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+
+<br>
+
+> **"Data Engineering isn't just about aggregating numbers—it's about reliability, scalability, and data quality."**
+>
+> *This project abandons the standard 'Jupyter Notebook to CSV' approach. It represents a fully modularized, production-grade PySpark pipeline featuring Delta Lake architectures, custom UDF feature engineering, fail-fast data quality assertions, and automated CI/CD.*
+
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [Project Mission](#-project-mission)
+- [Architecture Workflow](#️-architecture-workflow)
+- [What Makes This Different](#-what-makes-this-different)
+- [Delta Lake Analysis Outputs](#-delta-lake-analysis-outputs)
+- [Tech Stack](#️-tech-stack)
+- [Project Structure](#-project-structure)
+- [Setup and Installation (Local)](#️-setup-and-installation)
+- [Docker](#-ci-cd-and-docker)
+- [Author](#-author)
+
+---
+
+## 🎯 Project Mission
+
+Translating messy social media sentiment data into structured insights is typically done through isolated, fragile scripts. This repository demonstrates how to build an **Enterprise-Grade Batch Pipeline** that validates data on entry, enriches it via Python User-Defined Functions (UDFs), performs distributed aggregations, and sinks the results into ACID-compliant Delta tables.
+
+**Built end-to-end: from raw CSV → Data Quality validation → UDF feature engineering → PySpark distributed processing → Delta Lake storage → GitHub Actions testing.**
+
+---
 
 ## 🏗️ Architecture Workflow
 
@@ -39,7 +80,52 @@ graph TD
     style O fill:#6cf,stroke:#333,stroke-width:2px,color:#000
 ```
 
-## 📂 Project Structure
+---
+
+## 💡 What Makes This Different
+
+| Feature | This Project | Typical Student Project |
+|---|---|---|
+| **Data Storage** | ✅ Delta Lake (ACID, Time-Travel) | ❌ Flat CSV files |
+| **Code Structure** | ✅ Modularized OOP Python functions | ❌ Single linear Jupyter Notebook |
+| **Quality Control** | ✅ Pre-processing assertions (Fail-fast) | ❌ No schema validation |
+| **Automation** | ✅ Makefile abstracting commands | ❌ Manual execution execution |
+| **Testing** | ✅ Unit tested via PyTest and Mock Data | ❌ Not tested |
+| **CI/CD** | ✅ GitHub Actions automated remote testing | ❌ None |
+| **Deployment** | ✅ Dockerized for cluster deployment | ❌ Local execution only |
+| **Configuration** | ✅ Externalized `config.json` | ❌ Hardcoded file paths |
+
+---
+
+## 📦 Delta Lake Analysis Outputs
+
+Unlike standard tutorials, this pipeline does not write slow, unreliable CSVs. It generates transactional, ACID-compliant **Delta tables** in the `data/output/` directory:
+
+1. **Top Sentiments** (`output_top_sentiments`): Top 10 Sentiments by average Likes and Retweets.
+2. **Sentiment Distribution** (`output_sentiment_platform`): Sentiment count segmented by platform.
+3. **Country Analysis** (`output_country_analysis`): Average engagement metrics grouped by country.
+4. **Hourly Trends** (`output_hourly_sentiment`): Sentiment fluctuations across different hours of the day.
+5. **Platform Engagement** (`output_platform_engagement`): Popularity based on total likes and retweets per platform.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Tool | Purpose |
+|---|---|---|
+| Language | Python 3.9+ / Java 11 | Core |
+| Big Data Engine | PySpark | Distributed data processing |
+| Storage Format | Delta Lake | Reliable, ACID data sinks |
+| Pipeline Automation | Makefile | Simplified execution |
+| Testing | PyTest | Asserting logic correctness |
+| CI/CD | GitHub Actions | Remote test automation |
+| Container | Docker | Reproducible deployment |
+| Configuration | JSON | Parameter management |
+
+---
+
+## 📁 Project Structure
+
 ```text
 ├── .github/workflows/
 │   └── spark_ci.yml          # GitHub Actions CI/CD Pipeline
@@ -49,7 +135,7 @@ graph TD
 │   ├── jobs/
 │   │   └── sentiment_analysis.py  # Core Spark DataFrame transformations
 │   ├── utils/
-│   │   ├── spark_utils.py    # SparkSession logic 
+│   │   ├── spark_utils.py    # SparkSession logic (Delta injected)
 │   │   ├── data_quality.py   # Row & schema validations
 │   │   └── udfs.py           # Custom Feature Engineering
 │   └── main.py               # Application entry point
@@ -63,10 +149,12 @@ graph TD
 └── requirements.txt          # Python dependencies
 ```
 
-## 🛠️ Setup and Installation
+---
+
+## ⚙️ Setup and Installation
 
 ### Local Execution (Via Makefile)
-This project uses a Makefile to abstract execution logic. Ensure you have Python 3.8+ and Java 11 installed.
+This project uses a Makefile to abstract execution logic. Make sure you have Python 3.8+ and Java 11 installed.
 
 1. **Install Dependencies:**
    ```bash
@@ -74,7 +162,7 @@ This project uses a Makefile to abstract execution logic. Ensure you have Python
    ```
 
 2. **Run the Delta Pipeline:**
-   Reads the CSV, enforces Data Quality, applies UDFs, runs 5 distributed jobs, and generates Delta Lake directories locally.
+   Reads the source data, enforces Data Quality, applies UDFs, runs 5 distributed jobs, and generates Delta Lake directories locally.
    ```bash
    make run
    ```
@@ -91,14 +179,38 @@ This project uses a Makefile to abstract execution logic. Ensure you have Python
    make clean
    ```
 
-## 📦 Delta Lake Analysis Outputs
-Unlike standard tutorials, this pipeline does not write slow CSVs. It generates transactional, ACID-compliant Delta tables in `data/output/`:
-1. **Top Sentiments** (`output_top_sentiments`): Top 10 Sentiments by average Likes and Retweets.
-2. **Sentiment Distribution** (`output_sentiment_platform`): Sentiment count segmented by platform.
-3. **Country Analysis** (`output_country_analysis`): Average engagement metrics grouped by country.
-4. **Hourly Trends** (`output_hourly_sentiment`): Sentiment fluctuations across different hours of the day.
-5. **Platform Engagement** (`output_platform_engagement`): Popularity based on total likes and retweets per platform.
+---
 
 ## 🛳️ CI/CD and Docker
-- **Continuous Integration:** Whenever code is pushed to the `main` branch, a GitHub Action spins up an Ubuntu environment, installs Java and PySpark, and runs the `pytest` suite automatically.
-- **Docker:** A `Dockerfile` is provided for containerized deployment to clusters (like Databricks or Kubernetes).
+
+- **Continuous Integration (CI):** Whenever code is pushed to the `main` branch, a GitHub Action spins up an Ubuntu environment, installs Java and PySpark, and runs the `pytest` suite automatically.
+- **Docker:** Build the container for cloud cluster deployment (Kubernetes, AWS EMR, etc.):
+  ```bash
+  docker build -t sentiment_analysis_job .
+  docker run -it sentiment_analysis_job
+  ```
+
+---
+
+## 👤 Author
+
+<div align="center">
+
+**Amruth Kumar M**
+
+B.Tech — Artificial Intelligence & Data Science  
+REVA University, Bengaluru | Data Science Intern @ iStudio
+
+[![GitHub](https://img.shields.io/badge/GitHub-Amruth011-181717?style=for-the-badge&logo=github)](https://github.com/Amruth011)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/amruth-kumar-m)
+
+</div>
+
+---
+
+<div align="center">
+
+*Built from scratch to demonstrate Production-Quality PySpark Data Engineering.*
+
+**Python • PySpark • Delta Lake • Docker • GitHub Actions**
+</div>

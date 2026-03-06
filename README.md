@@ -14,7 +14,7 @@
 
 <br>
 
-### 👉 [**View the Live Executive Dashboard →**](#) *(Link will be active once deployed on Streamlit Cloud)*
+### 👉 [**View the Live Executive Dashboard →**](https://socialmediasentimentanalysis-9hj7cfkcjjsdky5xwbmzzr.streamlit.app/)
 
 <br>
 

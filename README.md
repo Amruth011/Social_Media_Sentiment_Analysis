@@ -7,9 +7,14 @@
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![PySpark](https://img.shields.io/badge/PySpark-Data_Engineering-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)](https://spark.apache.org/docs/latest/api/python/)
 [![Delta Lake](https://img.shields.io/badge/Delta_Lake-ACID_Transactions-00A4E4?style=for-the-badge)](https://delta.io/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Live_Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI/CD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+
+<br>
+
+### 👉 [**View the Live Executive Dashboard →**](#) *(Link will be active once deployed on Streamlit Cloud)*
 
 <br>
 
@@ -93,6 +98,7 @@ graph TD
 | **Testing** | ✅ Unit tested via PyTest and Mock Data | ❌ Not tested |
 | **CI/CD** | ✅ GitHub Actions automated remote testing | ❌ None |
 | **Deployment** | ✅ Dockerized for cluster deployment | ❌ Local execution only |
+| **Front-End UI** | ✅ Interactive Streamlit Dashboard (`app.py`) | ❌ No business-facing visuals |
 | **Configuration** | ✅ Externalized `config.json` | ❌ Hardcoded file paths |
 
 ---

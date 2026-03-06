@@ -1,0 +1,11 @@
+{
+    "app_name": "SocialMediaSentimentAnalysis",
+    "data_paths": {
+        "input": "SocialMediaSentimentAnalysiscsv.csv",
+        "output_top_sentiments": "data/output/top_sentiments",
+        "output_sentiment_platform": "data/output/sentiment_platform",
+        "output_country_analysis": "data/output/country_analysis",
+        "output_hourly_sentiment": "data/output/hourly_sentiment",
+        "output_platform_engagement": "data/output/platform_engagement"
+    }
+}

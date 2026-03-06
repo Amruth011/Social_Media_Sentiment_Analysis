@@ -30,13 +30,13 @@ graph TD
         J -->|Write Delta| O[(data/output/platform_engagement)]
     end
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#fcf,stroke:#333,stroke-width:2px
-    style K fill:#6cf,stroke:#333,stroke-width:2px
-    style L fill:#6cf,stroke:#333,stroke-width:2px
-    style M fill:#6cf,stroke:#333,stroke-width:2px
-    style N fill:#6cf,stroke:#333,stroke-width:2px
-    style O fill:#6cf,stroke:#333,stroke-width:2px
+    style A fill:#f9f,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#fcf,stroke:#333,stroke-width:2px,color:#000
+    style K fill:#6cf,stroke:#333,stroke-width:2px,color:#000
+    style L fill:#6cf,stroke:#333,stroke-width:2px,color:#000
+    style M fill:#6cf,stroke:#333,stroke-width:2px,color:#000
+    style N fill:#6cf,stroke:#333,stroke-width:2px,color:#000
+    style O fill:#6cf,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ## 📂 Project Structure

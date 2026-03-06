@@ -192,6 +192,17 @@ This project uses a Makefile to abstract execution logic. Make sure you have Pyt
 
 ---
 
+## ☁️ Cloud Deployment (Databricks)
+
+While the project includes a `Dockerfile` for containerized execution on any cloud environment, this architecture is explicitly designed to be deployed natively on **Databricks**. 
+
+To deploy this in a real-world enterprise:
+1. **Compute:** Provision a Databricks Job Cluster (e.g., using Databricks Runtime 13.3 LTS Machine Learning).
+2. **Orchestration:** Upload the `src/main.py` entry point to Databricks Workflows.
+3. **Execution:** Databricks naturally supports the exact Delta Lake write operations we've coded, seamlessly sinking our processed DataFrames directly into cloud storage (AWS S3 or Azure Data Lake) as Delta Tables for BI Dashboards and ML Models to consume.
+
+---
+
 ## 👤 Author
 
 <div align="center">
